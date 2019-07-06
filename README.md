@@ -1,6 +1,8 @@
 # Eclipse Sequencer
 Eclipse Sequencer is a lua script for Magic Lantern, which automates imaging session of Total Solar Eclipse.
 
+![Solar Eclipse](https://github.com/rkaczorek/eclipse-sequencer/blob/master/media/DiamondRingChile2019.jpg)
+
 The script features:
 - Configurable times for Contact 1 to 4
 - All eclipse phases: Partial, Diamon Ring, Bailey's Beads, Totality, Earthshine
