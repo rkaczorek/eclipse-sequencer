@@ -556,7 +556,14 @@ function main()
 	-- c3+3s to c3+10s:		bailey's beads				100		1/2000
 	-- c3+11s to c3+15s:	diamond ring				100		1/80
 	-- c3+20s:				replace camera filter!
-	-- c3 to c4:			partial eclipse				100		1/250 - 1/2
+	-- c3 to c4:			partial eclipse				100		1/250 - 1/500
+	--
+	-- Exposure times assume that the eclipse happens while the Sun is well above the horizon.
+	-- If any event happens while the Sun is close to sunrise or sunset, exposure times 
+	-- must be adjusted accordingly
+	-- Example: The eclipse in 2019 in Chile was ending just before sunset,
+	-- so exposure time was set to 1/250 - 1/2 instead 1/250 - 1/500. This accounted for the Sun
+	-- getting darker (due to the sunset), even though it was "opening" at the end of the eclipse
 
 	-- Main solar eclipse sequence
 	sequence_partial ((c1_sec - LeadTime), (c2_sec - 21), (1/500), (1/250), 100)
@@ -571,7 +578,7 @@ function main()
 	sequence_baileys_beads ((c3_sec + 3), (c3_sec + 10), (1/2000), 100)
 	sequence_diamond_ring ((c3_sec + 11), (c3_sec + 15), (1/40), 100)
 	filter_warning ((c3_sec + 20))
-	sequence_partial ((c3_sec + 21), (c4_sec + TrailTime), (1/250), (1/2), 100)
+	sequence_partial ((c3_sec + 21), (c4_sec + TrailTime), (1/250), (1/500), 100)
 
 	log ("%s: All done", pretty_time(now()))
 	log_stop ()
